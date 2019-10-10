@@ -1,0 +1,25 @@
+<div style="margin-left:300px ">
+  BOOKING INFORMATION
+    <table border="1">
+      <tr>
+      <th>Booking ID</th>
+      <th>Passenger ID</th>
+      <th>Flight Number</th>
+      <th>Number of Seats</th>
+      
+      
+    </tr> 
+      
+      
+          <tr *ngFor="let e of book">
+            <td>{{e.bookId}}</td>
+            <td>{{e.passengerId}}</td>
+            <td>{{e.fltno}}</td>
+            <td>{{e.seatNo}}</td>
+            
+            
+            </tr>  
+      
+    </table>
+  
+  </div>

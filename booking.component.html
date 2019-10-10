@@ -1,0 +1,25 @@
+
+<table border="1">
+    <tr>
+    <th>Fltno</th>
+    <th>Source</th>
+    <th>Destination</th>
+    <th>Departure Time</th>
+    <th>Arrival Time</th>
+    <th>Price</th>
+    <th>Duration</th>
+    <th>Date</th>
+    </tr>
+    <tr *ngFor="let e of emp">
+    <td>{{e.fltno}}</td>
+    <td>{{e.src}}</td>
+    <td>{{e.dest}}</td>
+    <td>{{e.st}}</td>
+    <td>{{e.dt}}</td>
+    <td>{{e.price}}</td>
+    <td>{{e.duration}}</td>
+    <td>{{e.dates}}</td>
+    </tr>
+    </table>
+
+    

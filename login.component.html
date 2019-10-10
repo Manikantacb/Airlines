@@ -1,0 +1,90 @@
+<div>
+<div id="display">
+  <br>
+  <br>
+  <br>
+        <h2>FLIGHTS</h2>
+      <form #formObj2="ngForm" (ngSubmit)="verify2(formObj2.value)"> <!--give reference for form for futher use-->
+        <select name="src" placeholder="Source" ngModel>
+          <option value="BLR">BLR-Bangalore</option>
+          <option value="DEL"> DEL-Delhi</option>
+          <option value="HYD">HYD-Hyderabad</option>
+          <option value="IXC">IXC-Chandigarh</option>
+        </select>
+
+         
+          <select name="dest" placeholder="Destination" ngModel>
+          <option value="BLR">BLR-Bangalore</option>
+          <option value="DEL">DEL-Delhi</option>
+          <option value="HYD">HYD-Hyderabad</option>
+          <option value="IXC">IXC-Chandigarh</option>
+          </select>
+        
+        <input type="date" name="dates" placeholder="Departure date" min="2018-07-27"  ngModel>
+       <!-- <input type="date" name="return" placeholder="arrival date" ngModel>-->
+        <input type="submit" value="submit">
+       <!-- <input type="button" value="click here" (click)="verify1()">-->
+      </form>
+      {{msg}}
+    </div>
+    
+      <div id="login">
+        <br>
+        <br>
+        <br>
+        <h2>LOGIN</h2>
+        <div class="form-group">
+        <form #formObj="ngForm" role="form" (ngSubmit)="verify(formObj.value) && formObj.valid"> <!--give reference for form for futher use-->
+          UserName <input class="form-control" type="text" name="emailId" required ngModel >
+          
+          <br><br>
+          PassWord <input type="password" name="password" ngModel required #passId="ngModel" minlength="2" class="form-control">
+          <span *ngIf="passId.errors&&(passId.dirty||passId.touched)">
+              <span *ngIf="passId.errors.required" style="color: red">Password is required</span> 
+              <span *ngIf="passId.errors.minlength" style="color:red">Password must be min 2 characters</span>
+         </span>
+
+          <br><br>
+          Admin <input type="radio" name="tt" value="admin" required ngModel>
+          Customer <input type="radio" name="tt" value="cust" required ngModel>
+          <br><br>
+          <input type="submit" value="SUBMIT" class="btn btn-danger">  |
+           
+          <input type="submit" value="SIGN UP"  (click)=signup() class="btn btn-danger">
+      </form>
+    </div>
+      {{msg}}
+      </div>
+      <br>
+      <br>
+      <div *ngIf="flag" id="dis">
+          <table border="1">
+            <tr>
+            <th>Flight Number</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Date</th>
+            
+          </tr> 
+            
+            
+                <tr *ngFor="let e of plane;let i = index" >
+                  <td>{{e.fltno}}</td>
+                  <td>{{e.src}}</td>
+                  <td>{{e.dest}}</td>
+                  <td>{{e.st}}</td>
+                  <td>{{e.dt}}</td>
+                  <td>{{e.price}}</td>
+                  <td>{{e.duration}}</td>
+                  <td>{{e.dates}}</td>
+                  
+                  </tr>  
+            
+          </table>
+        
+        </div>
+</div>

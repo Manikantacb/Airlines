@@ -1,0 +1,37 @@
+<br><br>
+<div class="row">
+    <div class="col-75">
+      <div class="container">
+          <form #chkObj="ngForm" (ngSubmit)="checkDebit()">
+  
+          <div class="row">
+           
+  
+            <div class="col-50">
+              <h3>Payment</h3>
+              <label for="adr"><i class="fa fa-address-card-o"></i> Billing Address</label>
+              <input type="text" id="adr" name="debitAddress" placeholder="Enter Address" ngModel>
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="debitName" placeholder="John More Doe" ngModel>
+              <label for="ccnum">Debit card number</label>
+              <input type="text" id="ccnum" name="debitCardNo" placeholder="111-222-333" ngModel>
+              
+  
+              <div class="row">
+                
+                <div class="col-50">
+                  <label for="pin">PIN</label>
+                  <input type="text" id="pin" name="debitPin" placeholder="" ngModel>
+                </div>
+              </div>
+            </div>
+  
+          </div>
+          
+          <input type="submit" value="Submit" class="btn" >
+        </form>
+      </div>
+    </div>
+  
+    
+  </div>

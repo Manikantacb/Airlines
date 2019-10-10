@@ -1,0 +1,100 @@
+<div id=details>
+  <h3>BOOKING</h3>
+    Welcome {{email}}!!
+    
+   
+    <form #formObj1="ngForm" (ngSubmit)="verifyPlane(formObj1.value)"> 
+    <table>
+      <tr>
+        <td id="src"><select name="src" ngModel>
+            <option value="BLR">Bangalore</option>
+            <option value="DEL">Delhi</option>
+            <option value="IXC">Chandigarh</option>
+            <option value="HYD">Hyderabad</option>
+            <option value="AMR">Amritsar</option>
+          </select></td>
+        <td id="dest"><select name="dest" ngModel>
+          <option value="BLR">Bangalore</option>
+          <option value="DEL">Delhi</option>
+          <option value="IXC">Chandigarh</option>
+          <option value="HYD">Hyderabad</option>
+          <option value="AMR">Amritsar</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+          <td id="date"><input type="date" name="dates" placeholder="Date"  min="2018-07-27" ngModel></td>
+        </tr>
+      <tr>  
+        <td><input type="submit" value="submit"></td>
+      </tr>
+    </table>     
+          </form>
+          
+
+          <br>
+          <br>
+          <div *ngIf="flag">
+          <table border="1">
+            <tr>
+            <th>Flight Number</th>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Departure Time</th>
+            <th>Arrival Time</th>
+            <th>Price</th>
+            <th>Duration</th>
+            <th>Date</th>
+            <td>Book</td>
+          </tr> 
+            
+            
+                <tr *ngFor="let e of data;let i = index" (click)="bookFun(i)">
+                  <td>{{e.fltno}}</td>
+                  <td>{{e.src}}</td>
+                  <td>{{e.dest}}</td>
+                  <td>{{e.st}}</td>
+                  <td>{{e.dt}}</td>
+                  <td>{{e.price}}</td>
+                  <td>{{e.duration}}</td>
+                  <td>{{e.dates}}</td>
+                  <td><input type="button" value="BookTicket" ></td>
+                  </tr>  
+            
+          </table>
+        
+        </div>
+        <br>
+        <br>
+      <div *ngIf="bookFlag" >
+        {{price}}
+        <form #formObj1="ngForm">
+          <table>
+           <th> PassengerId is :<input type="text" name="passengerId" [ngModel]="userInfoData?.passengerId"><br/></th>
+           <th> First Name is  :<input type="text" name="firstName" [ngModel]="userInfoData?.firstName"><br/></th>
+           <th> Last Name is   :<input type="text" name="lastName" [ngModel]="userInfoData?.lastName"><br/></th>
+           <th> Age is         :<input type="text" name="age" [ngModel]="userInfoData?.age"><br/></th>
+           <th> Email Id is    :<input type="text" name="emailId" [ngModel]="userInfoData?.emailId"><br/></th>
+           <th> Phone Number is:<input type="text" name="phoneNo" [ngModel]="userInfoData?.phoneNo"><br/></th>
+          </table>
+        </form>
+        <br>
+        <br>
+        <form #formObj="ngForm" (ngSubmit)="confirmBooking(formObj.value)">
+            <table>
+                <!-- <th>Booking Id is <input type="text" name="bookId" ngModel><br/></th> -->
+                  <th>PassengerId is <input type="text" name="passengerId" [ngModel]="userInfoData?.passengerId"><br/></th>
+                    <th>Flight Number is <input type="text" name="fltno" [ngModel]="fltno"><br/></th>
+                      <th>Number of Seats <input type="text" name="seatNo" ngModel><br/></th>
+                      
+                        
+         <!--  Number OF Ticket <input type="text" name="numberOfSeat" ngModel> -->
+        </table>
+        <br>
+        <br>
+        <input type="submit" value="Confirm Booking "  >
+        </form>
+     
+     </div>
+          </div>
+          

@@ -1,0 +1,25 @@
+#display{
+    background-color:#d1e0ec; 
+    width:70%;
+    height:500px;
+    text-align:center;
+    float:left;
+    
+    
+    
+}
+#login{
+    background-color:#d1e0ec; 
+    width:30%;
+    height:500px;
+    text-align:center;
+    
+    float:right;
+  
+ 
+}
+#dis{
+    text-align:center;
+    margin-left:70px;
+
+}

@@ -1,0 +1,31 @@
+<div style="margin-left:300px ">
+  USER INFORMATION
+    <table border="1">
+      <tr>
+      <th>PassengerId</th>
+      <th>FirstName</th>
+      <th>LastName</th>
+      <th>Age</th>
+      <th>Email ID/th>
+      <th>Phone Number</th>
+      <th>Password</th>
+      
+      
+    </tr> 
+      
+      
+          <tr *ngFor="let e of usri">
+            <td>{{e.passengerId}}</td>
+            <td>{{e.firstName}}</td>
+            <td>{{e.lastName}}</td>
+            <td>{{e.age}}</td>
+            <td>{{e.emailId}}</td>
+            <td>{{e.phoneNo}}</td>
+            <td>{{e.password}}</td>
+            
+            
+            </tr>  
+      
+    </table>
+  
+  </div>

@@ -1,0 +1,25 @@
+
+<div style="margin-left:300px ">
+    SEATS INFORMATION
+    <table border="1">
+      <tr>
+     
+      <th>Flight Number</th>
+      <th>Seats</th>
+      <th>Available Seats</th>
+      
+      
+    </tr> 
+      
+      
+          <tr *ngFor="let e of seat1">
+              <td>{{e.fltno}}</td>
+            <td>{{e.seats}}</td>
+           <td>{{e.availseats}}</td>
+            
+            
+            </tr>  
+      
+    </table>
+  
+  </div>
